@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+  <%= render @cart.line_items %>
+</table>
+
+<table>
+  <tr>
+    <th>total</th>
+  </tr>
+  <tr>
+    <td><%= @cart.total %></td>
+  </tr>
+</table>
+
+

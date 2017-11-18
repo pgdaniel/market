@@ -9,6 +9,8 @@ class CartsController < ApplicationController
 
     # puts in cart
     current_customer.cart.line_items.create(product: @product)
+
+    redirect_to check_out_path
   end
 
   def find_product

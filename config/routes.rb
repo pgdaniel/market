@@ -4,4 +4,7 @@ Rails.application.routes.draw do
 
   resources :products
   resources :carts
+  resource :check_out, controller: 'check_out'
+
+  root to: 'products#index'
 end
