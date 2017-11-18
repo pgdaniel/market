@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
-  belongs_to :stock_item, optional: :true
-  validates_presence_of :name, :description
+  validates_presence_of :name
+  validates_presence_of :description
+  validates_presence_of :price_cents
 end

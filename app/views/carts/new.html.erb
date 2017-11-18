@@ -1,6 +1,6 @@
 <p>Name: <%= @product.name %></p>
 <p>Description <%= @product.description %></p>
-<p>Price <%= @product.stock_item.price_cents %></p>
+<p>Price <%= @product.price_cents %></p>
 
 <%= simple_form_for @cart do |f| %>
   <%= hidden_field_tag 'product_id', @product.id %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118005637) do
+ActiveRecord::Schema.define(version: 20171118045335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,11 @@ ActiveRecord::Schema.define(version: 20171118005637) do
   end
 
   create_table "line_items", force: :cascade do |t|
+    t.bigint "cart_id"
     t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
     t.index ["product_id"], name: "index_line_items_on_product_id"
   end
 
@@ -42,21 +44,13 @@ ActiveRecord::Schema.define(version: 20171118005637) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "stock_item_id"
-    t.index ["stock_item_id"], name: "index_products_on_stock_item_id"
-  end
-
-  create_table "stock_items", force: :cascade do |t|
-    t.string "sku"
-    t.bigint "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "price_cents"
-    t.index ["product_id"], name: "index_stock_items_on_product_id"
+    t.string "sku"
+    t.boolean "taxable"
+    t.boolean "perishable"
   end
 
   add_foreign_key "carts", "customers"
+  add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "products"
-  add_foreign_key "products", "stock_items"
-  add_foreign_key "stock_items", "products"
 end

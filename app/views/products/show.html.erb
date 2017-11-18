@@ -1,5 +1,5 @@
 <p>Name: <%= @product.name %></p>
 <p>Description <%= @product.description %></p>
-<p>Price <%= @product.stock_item.price_cents %></p>
+<p>Price <%= @product.price_cents %></p>
 
 <%= link_to 'Add to cart', new_cart_path(product_id: @product.id) %>
