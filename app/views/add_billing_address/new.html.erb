@@ -1,0 +1,9 @@
+<%= simple_form_for @address, url: add_billing_address_path do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :street_1 %>
+  <%= f.input :street_2 %>
+  <%= f.input :state %>
+  <%= f.input :zipcode %>
+  <%= f.submit %>
+<% end %>
