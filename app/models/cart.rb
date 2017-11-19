@@ -3,6 +3,6 @@ class Cart < ApplicationRecord
   has_many :line_items
 
   def total
-    line_items.sum { |line_item| line_item.product.price_cents }
+    line_items.sum { |line_item| line_item.product.price }
   end
 end
