@@ -5,5 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-FactoryBot.create(:product)
+50.times { FactoryBot.create(:product) }
 FactoryBot.create(:customer)
