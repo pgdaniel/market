@@ -1,9 +1,10 @@
-<%= simple_form_for @address, url: add_shipping_address_path do |f| %>
+<%= simple_form_for @address, html: { class: 'form-horizontal' }, url: add_shipping_address_path do |f| %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :street_1 %>
   <%= f.input :street_2 %>
+  <%= f.input :city %>
   <%= f.input :state %>
   <%= f.input :zipcode %>
-  <%= f.submit %>
+  <%= f.submit 'Add new shipping address', class: 'btn btn-primary' %>
 <% end %>

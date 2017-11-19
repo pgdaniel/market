@@ -1,4 +1,4 @@
-<table>
+<table class="table">
   <tr>
     <th>Product</th>
     <th>Description</th>
@@ -7,7 +7,7 @@
   <%= render @cart.line_items %>
 </table>
 
-<table>
+<table class="table">
   <tr>
     <th>total</th>
   </tr>
@@ -16,4 +16,10 @@
   </tr>
 </table>
 
-<%= link_to 'Add address', new_add_shipping_address_path %>
+<div>
+  <%= select_tag :shipping_address, options_for_select(@cart.customer.shipping_addresses.map { |sa| [sa.address.full_address, sa.id] }) %>
+  <%= link_to 'Add new shipping address', new_add_shipping_address_path, class: 'btn btn-primary' %>
+<div>
+
+<%= select_tag :billing_address, options_for_select(@cart.customer.billing_addresses.map { |sa| [sa.address.full_address, sa.id] }) %>
+<%= link_to 'Add new billing address', new_add_billing_address_path, class: 'btn btn-primary' %>

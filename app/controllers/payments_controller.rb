@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
   def new
+    @total = current_customer.cart.total
     @payment = Payment.new
   end
 
