@@ -16,11 +16,11 @@ gem 'turbolinks', '~> 5'
 gem 'rails_admin', '~> 1.2'
 gem 'simple_form'
 gem 'money-rails', '~>1'
+gem 'factory_bot_rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
-  gem 'factory_bot_rails'
   gem 'pry-rails'
   gem 'ffaker'
 end
