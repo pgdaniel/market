@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
 
   def current_customer
     # TODO
-    @current_customer = Customer.last
+    @current_customer = Customer.includes(
+      { shipping_addresses: :address },
+      {billing_addresses: :address }
+    ).last
   end
 end
