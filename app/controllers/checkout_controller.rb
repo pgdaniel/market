@@ -1,4 +1,4 @@
-class CheckOutController < ApplicationController
+class CheckoutController < ApplicationController
   def show
     @cart = current_customer.cart
   end

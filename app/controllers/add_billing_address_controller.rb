@@ -7,7 +7,7 @@ class AddBillingAddressController < ApplicationController
     @billing_address = current_customer.billing_addresses.new(address: Address.new(address_params))
 
     if @billing_address.save
-      redirect_to check_out_path
+      redirect_to checkout_path
     else
       render :new
     end
