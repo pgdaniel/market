@@ -7,7 +7,7 @@ class AddShippingAddressController < ApplicationController
     @shipping_address = current_customer.shipping_addresses.new(address: Address.new(address_params))
 
     if @shipping_address.save
-      redirect_to new_add_billing_address_path
+      redirect_to check_out_path
     else
       render :new
     end

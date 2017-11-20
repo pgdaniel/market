@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :products
-  resources :carts
-  resource :check_out, controller: 'check_out'
+  resource :carts
+  resource :checkout, controller: 'check_out'
   resource :add_billing_address, controller: 'add_billing_address'
   resource :add_shipping_address, controller: 'add_shipping_address'
   resources :payments

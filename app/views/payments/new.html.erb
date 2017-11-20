@@ -1,4 +1,4 @@
-<p>Amount due: <%= @total %></p>
+<p>Amount due: <%= number_to_currency @total %></p>
 
 <%= simple_form_for @payment do |f| %>
   <%= f.input :amount %>

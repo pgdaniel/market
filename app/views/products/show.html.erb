@@ -2,4 +2,8 @@
 <p>Description <%= @product.description %></p>
 <p>Price <%= @product.price %></p>
 
-<%= link_to 'Add to cart', carts_path(product_id: @product.id), method: :post %>
+<%= simple_form_for @product, url: carts_path, html: { class: 'form-horizontal' } do |f| %>
+ <%= number_field_tag :quantity, 1, min: 1 %>
+ <%= hidden_field_tag :product_id, @product.id %>
+ <%= f.submit 'Add to cart', class: 'btn btn-primary' %>
+<% end %>
